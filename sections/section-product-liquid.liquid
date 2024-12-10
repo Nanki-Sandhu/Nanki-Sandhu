@@ -109,20 +109,40 @@
   </div>
 </div>
 <script>
-   const popupModal = document.getElementById("product-popup");
+  document.addEventListener("DOMContentLoaded", function () {
+  const popupModal = document.getElementById("product-popup");
   const closeBtn = document.querySelector(".close-popup-btn");
   const openPopupBtns = document.querySelectorAll(".open-popup-btn");
 
-  // Add event listeners to each open button
+  // Event listener for the button click to open the modal
   openPopupBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      console.log("Hello World");
-       const productId = e.target.dataset.productId;
-      console.log(productId);
+      // This will log the correct productId
+      const productId = e.target.dataset.productId;
+      console.log(productId);  // It should log 'product_1' for Product 1
+
+      // Get the hidden div associated with the productId
+      const productDetailsDiv = document.getElementById(`${productId}_details`);
+
+      // Extract product details from the hidden div
+      const productName = productDetailsDiv.querySelector("h2").textContent; // Title
+      const productDescription = productDetailsDiv.querySelector("p:first-child").textContent; // Description
+      const productPrice = productDetailsDiv.querySelector("p:last-child").textContent; // Price
+
+      // Set the modal content with extracted details
+      document.getElementById("popup-product-name").textContent = productName;
+      document.getElementById("popup-product-description").textContent = productDescription;
+      document.getElementById("popup-product-price").textContent = productPrice;
+
+      // If you have a product image URL, set the image URL here as well
+      const productImageUrl = '{{ product_1.featured_image | img_url: "large" }}'; // Use the actual image URL
+      document.getElementById("popup-product-image").src = productImageUrl;
+
       // Show the popup modal
-      popupModal.style.display = "block";
+      popupModal.style.display = "flex";
     });
   });
+
   // Close the popup when the close button is clicked
   closeBtn.addEventListener("click", () => {
     popupModal.style.display = "none";
@@ -133,6 +153,8 @@
     if (e.target === popupModal) {
       popupModal.style.display = "none";
     }
+  });
+});
   });
 </script>
 
