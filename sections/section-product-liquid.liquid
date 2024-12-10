@@ -12,10 +12,7 @@
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219');">
           <button class="open-popup-btn" data-product-id="{{ product_1.id }}">+</button>
         </div>
-        <div class="product-info">
-          <h4>{{ product_1.title }}</h4>
-          <p>{{ product_1.price | money }}</p>
-        </div>
+       
       </div>
     {% endif %}
 
@@ -24,10 +21,7 @@
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/man-adjusts-blue-tuxedo-bowtie_925x_55a49e12-d54b-488e-b7a0-ea4c201eb01f.jpg?v=1733769202');">
           <button class="open-popup-btn" data-product-id="{{ product_2.id }}">+</button>
         </div>
-        <div class="product-info">
-          <h4>{{ product_2.title }}</h4>
-          <p>{{ product_2.price | money }}</p>
-        </div>
+       
       </div>
     {% endif %}
 
@@ -36,10 +30,7 @@
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/red-plaid-shirt_925x_70e9e5a8-8fc5-4d60-9a9a-cc2e0dd57cc9.jpg?v=1733769209');">
           <button class="open-popup-btn" data-product-id="{{ product_3.id }}">+</button>
         </div>
-        <div class="product-info">
-          <h4>{{ product_3.title }}</h4>
-          <p>{{ product_3.price | money }}</p>
-        </div>
+        
       </div>
     {% endif %}
 
@@ -48,10 +39,7 @@
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/leather-jacket-and-tea_925x_2490cde1-7e61-4151-9a65-de8a763bc701.jpg?v=1733769229');">
           <button class="open-popup-btn" data-product-id="{{ product_4.id }}">+</button>
         </div>
-        <div class="product-info">
-          <h4>{{ product_4.title }}</h4>
-          <p>{{ product_4.price | money }}</p>
-        </div>
+        
       </div>
     {% endif %}
 
@@ -60,10 +48,7 @@
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/casual-fashion-woman_925x_56b56608-f207-45c1-b677-bb5aa26c1c7a.jpg?v=1733769238');">
           <button class="open-popup-btn" data-product-id="{{ product_5.id }}">+</button>
         </div>
-        <div class="product-info">
-          <h4>{{ product_5.title }}</h4>
-          <p>{{ product_5.price | money }}</p>
-        </div>
+       
       </div>
     {% endif %}
 
@@ -72,10 +57,7 @@
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/young-female-models-denim_925x_44c2cf9e-4030-4347-9d4a-f0e4a1479b4a.jpg?v=1733769226');">
           <button class="open-popup-btn" data-product-id="{{ product_6.id }}">+</button>
         </div>
-        <div class="product-info">
-          <h4>{{ product_6.title }}</h4>
-          <p>{{ product_6.price | money }}</p>
-        </div>
+        
       </div>
     {% endif %}
   </div>
@@ -166,22 +148,6 @@
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
-}
-
-.product-info {
-  padding: 10px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.product-info h4 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.product-info p {
-  font-size: 16px;
-  color: #333;
 }
 
   .popup-modal {
