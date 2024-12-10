@@ -12,9 +12,9 @@
     <div class="banner-image" style="background-image: url('{{ section.settings.image | image_url: '1600x' }}');">
       <!-- Optional: You can add text or any other content over the image -->
        <div class="banner-content">
-        <h1 class="banner-heading">{{ section.settings.heading }}</h1>
-        <p class="banner-text">{{ section.settings.text }}</p>
-        <a href="{{ section.blocks[0].settings.button_link }}" class="banner-button">{{ section.settings.button_text }}</a>
+        <h1 class="banner-heading">{{ section.settings.headingImg }}</h1>
+        <p class="banner-text">{{ section.settings.textImg }}</p>
+        <a href="{{ section.blocks[0].settings.button_link }}" class="banner-button">{{ section.settings.button_text_img }}</a>
       </div>
     </div>
   </div>
@@ -142,34 +142,27 @@
       "label": "Banner Image",
       "id": "image",
       "info": "Choose an image for the background.",
-    }
-   ],
-   "blocks": [
+    },
+      {
+      "type": "text",
+      "label": "HeadingImg",
+      "id": "headingImg",
+      "default": "The Gift Guide"
+    },
     {
-      "type": "content_block",
-      "name": "Content Block",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Heading",
-          "id": "heading",
-          "default": "Your Heading Here"
-        },
-        {
-          "type": "textarea",
-          "label": "Text",
-          "id": "text",
-          "default": "Your paragraph text goes here."
-        },
-        {
-          "type": "text",
-          "label": "Button Text",
-          "id": "button_text",
-          "default": "Click Here"
-        },
-      ]
-    }
+      "type": "textarea",
+      "label": "Text",
+      "id": "textImg",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "label": "Button Text",
+      "id": "button_text_img",
+      "default": "Shop Now"
+    },
    ],
+  
    "presets": [
    {
       "name": "Banner Liquid"
