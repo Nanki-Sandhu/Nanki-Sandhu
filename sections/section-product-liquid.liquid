@@ -95,43 +95,15 @@
   </div>
 </div>
 <script>
-  // Get references to the popup and close button
-  const popupModal = document.getElementById("product-popup");
-  const closeBtn = document.querySelector(".close-popup-btn");
-
-  // Get all the open popup buttons
   const openPopupBtns = document.querySelectorAll(".open-popup-btn");
 
   // Add event listeners to each open button
   openPopupBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      // Get product details from button attributes
-      const productName = e.target.getAttribute("data-product-name");
-      const productPrice = e.target.getAttribute("data-product-price");
-      const productDescription = e.target.getAttribute("data-product-description");
-
-      // Set product details in the popup
-      document.getElementById("popup-product-name").textContent = productName;
-      document.getElementById("popup-product-description").textContent = productDescription;
-      document.getElementById("popup-product-price").textContent = productPrice;
-
-      // Show the popup modal
-      popupModal.style.display = "block";
-    });
-  });
-
-  // Close the popup when the close button is clicked
-  closeBtn.addEventListener("click", () => {
-    popupModal.style.display = "none";
-  });
-
-  // Close the popup when clicked outside of the popup content
-  window.addEventListener("click", (e) => {
-    if (e.target === popupModal) {
-      popupModal.style.display = "none";
+      console.log("Hello World");
     }
-  });
 </script>
+
 <style>
   .product-grid {
   width: 100%;
