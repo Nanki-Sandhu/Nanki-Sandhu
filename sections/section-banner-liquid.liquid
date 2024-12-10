@@ -13,7 +13,7 @@
       <!-- Optional: You can add text or any other content over the image -->
        <div class="banner-content">
         <h1 class="banner-heading">{{ section.settings.headingImg }}</h1>
-        <p class="banner-text">{{ section.settings.textImg }}</p>
+        <p class="banner-text">{{ section.settings.textImg | newline_to_br }}</p>
         <a href="#" class="banner-button">{{ section.settings.button_text_img }}</a>
       </div>
     </div>
