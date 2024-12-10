@@ -12,7 +12,6 @@
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219');">
           <button class="open-popup-btn" data-product-id="{{ product_1.id }}">+</button>
         </div>
-       
       </div>
     {% endif %}
 
@@ -67,11 +66,38 @@
 <div id="product-popup" class="popup-modal" style="display: none;">
   <div class="popup-content">
     <span class="close-popup-btn">&times;</span>
+
+    <!-- Product Details -->
     <div class="popup-product-details">
-      <h2 id="popup-product-name"></h2>
-      <p id="popup-product-description"></p>
-      <p id="popup-product-price"></p>
-      <div id="popup-product-variants"></div>
+      <!-- Row 1: Image and Product Info -->
+      <div class="product-row">
+        <div class="product-image-container">
+          <img id="popup-product-image" src="" alt="Product Image" />
+        </div>
+        <div class="product-info-container">
+          <h2 id="popup-product-name"></h2>
+          <p id="popup-product-description"></p>
+          <p id="popup-product-price"></p>
+        </div>
+      </div>
+
+      <!-- Row 2: Color Selection -->
+      <div class="product-row">
+        <label for="product-color">Select Color:</label>
+        <div id="product-color-options">
+          <!-- Color options will be dynamically inserted here -->
+        </div>
+      </div>
+
+      <!-- Row 3: Size Selection -->
+      <div class="product-row">
+        <label for="product-size">Select Size:</label>
+        <select id="product-size">
+          <!-- Size options will be dynamically inserted here -->
+        </select>
+      </div>
+
+      <!-- Add to Cart Button -->
       <button id="add-to-cart-btn">Add to Cart</button>
     </div>
   </div>
@@ -85,16 +111,6 @@
   openPopupBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       console.log("Hello World");
-      // Get product details from button attributes
-      const productName = e.target.getAttribute("data-product-name");
-      const productPrice = e.target.getAttribute("data-product-price");
-      const productDescription = e.target.getAttribute("data-product-description");
-
-      // Set product details in the popup
-      document.getElementById("popup-product-name").textContent = productName;
-      document.getElementById("popup-product-description").textContent = productDescription;
-      document.getElementById("popup-product-price").textContent = productPrice;
-
       // Show the popup modal
       popupModal.style.display = "block";
     });
@@ -150,47 +166,117 @@
   cursor: pointer;
 }
 
-  .popup-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
+ /* Modal Styling */
+.popup-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 9999;
+  display: flex; /* Flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
 
-  .popup-content {
-    background-color: #fff;
-    padding: 20px;
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-  }
+/* Modal Content Styling */
+.popup-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 800px; /* Maximum width of the modal */
+  width: 100%; /* Make modal content responsive */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allow scroll if content overflows */
+}
 
-  .close-popup-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    cursor: pointer;
-  }
+/* Close Button Styling */
+.close-popup-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-  #add-to-cart-btn {
-    background-color: #28a745;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-  }
+/* Product Details Section */
+.popup-product-details {
+  display: flex;
+  flex-direction: column;
+}
 
-  #add-to-cart-btn:hover {
-    background-color: #218838;
-  }
+/* Row Layout */
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.product-image-container {
+  width: 40%; /* Adjust to fit image */
+}
+
+.product-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: rounding corners of the image */
+}
+
+.product-info-container {
+  width: 55%; /* Adjust to fit the text */
+}
+
+.product-info-container h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.product-info-container p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Color & Size Options */
+#product-color-options {
+  display: flex;
+  gap: 10px;
+}
+
+#product-color-options input {
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+#product-size {
+  width: 200px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* Add to Cart Button */
+#add-to-cart-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+#add-to-cart-btn:hover {
+  background-color: #555;
+}
   </style>
 {% schema %}
  {
