@@ -14,7 +14,10 @@
        <div class="banner-content">
         <h1 class="banner-heading">{{ section.settings.headingImg }}</h1>
         <p class="banner-text">{{ section.settings.textImg }}</p>
-        <a href="{{ section.blocks[0].settings.button_link }}" class="banner-button">{{ section.settings.button_text_img }}</a>
+        <a href="#" class="banner-button">{{ section.settings.button_text_img }}</a>
+      </div>
+      <div  class="banner-bottom">
+        <p>{{ section.settings.imgBtm }}</p>
       </div>
     </div>
   </div>
@@ -159,6 +162,12 @@
       "label": "Button Text",
       "id": "button_text_img",
       "default": "Shop Now"
+    },
+      {
+      "type": "text",
+      "label": "imgBtm",
+      "id": "imgBtm",
+      "default": "SUSTAINABLE,ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
     },
    ],
   
