@@ -117,20 +117,7 @@
   openPopupBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       console.log("Hello World");
-      const productId = e.target.dataset.productId;
-
-    // Get the hidden div associated with Product 1 (based on data-product-id)
-    const productDetailsDiv = document.getElementById(`${productId}_details`);
-
-    // Extract product details from the hidden div
-    const productName = productDetailsDiv.querySelector("h2").textContent; // Title
-    const productDescription = productDetailsDiv.querySelector("p:first-child").textContent; // Description
-    const productPrice = productDetailsDiv.querySelector("p:last-child").textContent; // Price
-
-    // Set the modal content with extracted details
-    document.getElementById("popup-product-name").textContent = productName;
-    document.getElementById("popup-product-description").textContent = productDescription;
-    document.getElementById("popup-product-price").textContent = productPrice;
+      // Show the popup modal
       popupModal.style.display = "block";
     });
   });
