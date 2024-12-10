@@ -1,6 +1,17 @@
+{{ section.settings.banner_liquid }}
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+   "name": "Banner Liquid",
+   "settings": [
+   {
+      "type": "liquid",
+      "id": "banner_liquid",
+      "label": "Banner Liquid",
+      "info": "Add app snippets or other liquid code to create advanced customizations."
+   }],
+   "presets": [
+   {
+      "name": "Banner Liquid"
+   }]
+}
 {% endschema %}
