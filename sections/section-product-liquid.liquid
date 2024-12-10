@@ -1,3 +1,103 @@
+<div class="product-grid">
+  {% assign product_1 = section.settings.product_1 %}
+  {% assign product_2 = section.settings.product_2 %}
+  {% assign product_3 = section.settings.product_3 %}
+  {% assign product_4 = section.settings.product_4 %}
+  {% assign product_5 = section.settings.product_5 %}
+  {% assign product_6 = section.settings.product_6 %}
+
+  <div class="product-grid-container">
+    {% if product_1 %}
+      <div class="product-block">
+        <div class="product-image" style="background-image: url('{{ product_1.featured_image | img_url: 'medium' }}');">
+          <button class="open-popup-btn" data-product-id="{{ product_1.id }}">+</button>
+        </div>
+        <div class="product-info">
+          <h4>{{ product_1.title }}</h4>
+          <p>{{ product_1.price | money }}</p>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if product_2 %}
+      <div class="product-block">
+        <div class="product-image" style="background-image: url('{{ product_2.featured_image | img_url: 'medium' }}');">
+          <button class="open-popup-btn" data-product-id="{{ product_2.id }}">+</button>
+        </div>
+        <div class="product-info">
+          <h4>{{ product_2.title }}</h4>
+          <p>{{ product_2.price | money }}</p>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if product_3 %}
+      <div class="product-block">
+        <div class="product-image" style="background-image: url('{{ product_3.featured_image | img_url: 'medium' }}');">
+          <button class="open-popup-btn" data-product-id="{{ product_3.id }}">+</button>
+        </div>
+        <div class="product-info">
+          <h4>{{ product_3.title }}</h4>
+          <p>{{ product_3.price | money }}</p>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if product_4 %}
+      <div class="product-block">
+        <div class="product-image" style="background-image: url('{{ product_4.featured_image | img_url: 'medium' }}');">
+          <button class="open-popup-btn" data-product-id="{{ product_4.id }}">+</button>
+        </div>
+        <div class="product-info">
+          <h4>{{ product_4.title }}</h4>
+          <p>{{ product_4.price | money }}</p>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if product_5 %}
+      <div class="product-block">
+        <div class="product-image" style="background-image: url('{{ product_5.featured_image | img_url: 'medium' }}');">
+          <button class="open-popup-btn" data-product-id="{{ product_5.id }}">+</button>
+        </div>
+        <div class="product-info">
+          <h4>{{ product_5.title }}</h4>
+          <p>{{ product_5.price | money }}</p>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if product_6 %}
+      <div class="product-block">
+        <div class="product-image" style="background-image: url('{{ product_6.featured_image | img_url: 'medium' }}');">
+          <button class="open-popup-btn" data-product-id="{{ product_6.id }}">+</button>
+        </div>
+        <div class="product-info">
+          <h4>{{ product_6.title }}</h4>
+          <p>{{ product_6.price | money }}</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-block {
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+  </style>
 {% schema %}
  {
   "name": "Product Liquid",
