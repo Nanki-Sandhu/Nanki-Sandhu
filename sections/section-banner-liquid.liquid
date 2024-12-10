@@ -9,8 +9,8 @@
     </div>
     
     <!-- Full-Width Image at the Bottom -->
-    <div class="banner-image">
-      <h1>Hello World</h1>
+  <div class="banner-image" style="background-image: url('{{ section.settings.image | img_url: '1600x' }}');">
+      <!-- Optional: You can add text or any other content over the image -->
     </div>
   </div>
 
@@ -93,7 +93,12 @@
       "id": "button_text",
       "default": "Choose Gift"
     },
-   
+    {
+      "type": "image_picker",
+      "label": "Banner Image",
+      "id": "image",
+      "info": "Choose an image for the background.",
+    }
    ],
    "presets": [
    {
