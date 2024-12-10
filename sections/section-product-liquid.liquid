@@ -80,6 +80,21 @@
     {% endif %}
   </div>
 </div>
+
+<!-- Popup Modal -->
+<div id="product-popup" class="popup-modal" style="display: none;">
+  <div class="popup-content">
+    <span class="close-popup-btn">&times;</span>
+    <div class="popup-product-details">
+      
+      <h2 id="popup-product-name"></h2>
+      <p id="popup-product-description"></p>
+      <p id="popup-product-price"></p>
+      <div id="popup-product-variants"></div>
+      <button id="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
+</div>
 <style>
   .product-grid {
   width: 100%;
