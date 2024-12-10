@@ -117,6 +117,8 @@
   openPopupBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       console.log("Hello World");
+       const productId = e.target.dataset.productId;
+      console.log(productId);
       // Show the popup modal
       popupModal.style.display = "block";
     });
