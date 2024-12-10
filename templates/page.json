@@ -22,12 +22,28 @@
       "settings": {
         "heading": "TISSO VISSON",
         "text": "Find the ideal git for your loved ones",
-        "button_text": "Choose Gift"
+        "button_text": "Choose Gift",
+        "headingImg": "The Gift Guide",
+        "textImg": "Discover Joy: Your Ultimate Holiday Gift Destination. \nExplore our curated selection and find the perfect gifts to\n delight your loved ones this holiday season.",
+        "button_text_img": "Shop Now",
+        "imgBtm": "SUSTAINABLE,ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+      }
+    },
+    "section_product_liquid_bEUbtE": {
+      "type": "section-product-liquid",
+      "settings": {
+        "product_1": "",
+        "product_2": "",
+        "product_3": "",
+        "product_4": "",
+        "product_5": "",
+        "product_6": ""
       }
     }
   },
   "order": [
     "main",
-    "section_banner_liquid_UfXWwg"
+    "section_banner_liquid_UfXWwg",
+    "section_product_liquid_bEUbtE"
   ]
 }
