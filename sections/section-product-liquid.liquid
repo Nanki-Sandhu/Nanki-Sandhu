@@ -161,7 +161,7 @@ function openPopup(imageUrl, name, description, price, color1, color2) {
     document.getElementById('popup-product-description').textContent = description;
     document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
     document.getElementById('product-popup').style.display = 'block';
-    const addToCartButton = document.getElementById('add-to-cart-button');
+    //const addToCartButton = document.getElementById('add-to-cart-button');
     
     // Set colors for the color options divs
     const color1Element = document.getElementById('productcolor1');
@@ -196,9 +196,7 @@ function openPopup(imageUrl, name, description, price, color1, color2) {
         selectedSize = sizeSelect.value;  // Update selected size dynamically
         console.log("Selected size: " + selectedSize);
     });
-    addToCartButton.addEventListener('click', function() {
-    console.log("Add to cart clicked");
-    }
+    
 }
 
 // Handle color selection
