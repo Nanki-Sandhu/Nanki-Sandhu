@@ -131,15 +131,13 @@
             document.getElementById('popup-product-description').textContent = description;
             document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
             document.getElementById('product-popup').style.display = 'block';
-        }
+        
            const color1Element = document.getElementById('productcolor1');
     const color2Element = document.getElementById('productcolor2');
 
-            console.log(${color});
+          
         color1Element.innerHTML = `<h3>Red</h3>`;
         color2Element.innerHTML = `${color2}`;
-    
-           
   
            const sizeSelect = document.getElementById('product-size');
             sizeSelect.innerHTML = `
@@ -151,6 +149,7 @@
                 <option value="2xl">2XL</option>
                 <option value="6xl">6XL</option>`;
         // Function to close the popup
+   }
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
         }
