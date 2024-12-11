@@ -198,11 +198,10 @@ color2Element.addEventListener('click', function(event) {
 }
 
 
-  function addToCart(color) {
-    console.log(`Color ${color} added to the cart!`);
-    
-}
  add-to-cart-btn.addEventListener('click', function() {
+   console.log("add to cart clicked");
+   console.log(`${selectedColor}`);
+   console.log(selectedColor)
     if (!selectedColor || !selectedSize) {
         alert("Please select both a color and a size before adding to the cart.");
         return;
