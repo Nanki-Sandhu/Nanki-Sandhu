@@ -161,7 +161,14 @@
           
         color1Element.innerHTML = `${color1}`;
         color2Element.innerHTML = `${color2}`;
-  
+  // Event listeners to select colors
+color1Element.addEventListener('click', function() {
+    console.log("color1 clicked");
+});
+
+color2Element.addEventListener('click', function() {
+    console.log("color1 clicked");
+});
            const sizeSelect = document.getElementById('product-size');
             sizeSelect.innerHTML = `
                 <option value="xs">XS</option>
@@ -185,14 +192,7 @@
     addToCart(color);
 }
 
-// Event listeners to select colors
-color1Element.addEventListener('click', function() {
-    console.log("color1 clicked");
-});
 
-color2Element.addEventListener('click', function() {
-    console.log("color1 clicked");
-});
   function addToCart(color) {
     console.log(`Color ${color} added to the cart!`);
     // Implement actual cart functionality here
