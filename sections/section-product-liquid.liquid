@@ -9,60 +9,79 @@
   <div class="product-grid-container">
     {% if product_1 %}
       <div class="product-block">
-        <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219');">
-          <button class="open-popup-btn" data-product-id="{{ product_1.id }}" onclick= "openPopup('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219', 'Bag', 'This is a detailed description of the product.', 29.99,'Red','Black')">+</button>
+        <div
+          class="product-image"
+          style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219');"
+        >
+          <button
+            class="open-popup-btn"
+            data-product-id="{{ product_1.id }}"
+            onclick="openPopup('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219', 'Bag', 'This is a detailed description of the product.', 29.99,'Red','Black')"
+          >
+            +
+          </button>
         </div>
       </div>
       <!-- Hidden Product Details -->
-        <div class="product-details" id="product_1_details" style="display: none;">
-          <h2>Orange Wide Leg</h2>
-          <p>dsnfksdnfcjdkskc</p>
-          <p>$33</p>
-        </div>
+      <div class="product-details" id="product_1_details" style="display: none;">
+        <h2>Orange Wide Leg</h2>
+        <p>dsnfksdnfcjdkskc</p>
+        <p>$33</p>
+      </div>
     {% endif %}
 
     {% if product_2 %}
       <div class="product-block">
-        <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/man-adjusts-blue-tuxedo-bowtie_925x_55a49e12-d54b-488e-b7a0-ea4c201eb01f.jpg?v=1733769202');">
+        <div
+          class="product-image"
+          style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/man-adjusts-blue-tuxedo-bowtie_925x_55a49e12-d54b-488e-b7a0-ea4c201eb01f.jpg?v=1733769202');"
+        >
           <button class="open-popup-btn" data-product-id="{{ product_2.id }}">+</button>
         </div>
-       
       </div>
     {% endif %}
 
     {% if product_3 %}
       <div class="product-block">
-        <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/red-plaid-shirt_925x_70e9e5a8-8fc5-4d60-9a9a-cc2e0dd57cc9.jpg?v=1733769209');">
+        <div
+          class="product-image"
+          style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/red-plaid-shirt_925x_70e9e5a8-8fc5-4d60-9a9a-cc2e0dd57cc9.jpg?v=1733769209');"
+        >
           <button class="open-popup-btn" data-product-id="{{ product_3.id }}">+</button>
         </div>
-        
       </div>
     {% endif %}
 
     {% if product_4 %}
       <div class="product-block">
-        <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/leather-jacket-and-tea_925x_2490cde1-7e61-4151-9a65-de8a763bc701.jpg?v=1733769229');">
+        <div
+          class="product-image"
+          style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/leather-jacket-and-tea_925x_2490cde1-7e61-4151-9a65-de8a763bc701.jpg?v=1733769229');"
+        >
           <button class="open-popup-btn" data-product-id="{{ product_4.id }}">+</button>
         </div>
-        
       </div>
     {% endif %}
 
     {% if product_5 %}
       <div class="product-block">
-        <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/casual-fashion-woman_925x_56b56608-f207-45c1-b677-bb5aa26c1c7a.jpg?v=1733769238');">
+        <div
+          class="product-image"
+          style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/casual-fashion-woman_925x_56b56608-f207-45c1-b677-bb5aa26c1c7a.jpg?v=1733769238');"
+        >
           <button class="open-popup-btn" data-product-id="{{ product_5.id }}">+</button>
         </div>
-       
       </div>
     {% endif %}
 
     {% if product_6 %}
       <div class="product-block">
-        <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/young-female-models-denim_925x_44c2cf9e-4030-4347-9d4a-f0e4a1479b4a.jpg?v=1733769226');">
+        <div
+          class="product-image"
+          style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/young-female-models-denim_925x_44c2cf9e-4030-4347-9d4a-f0e4a1479b4a.jpg?v=1733769226');"
+        >
           <button class="open-popup-btn" data-product-id="{{ product_6.id }}">+</button>
         </div>
-        
       </div>
     {% endif %}
   </div>
@@ -86,17 +105,22 @@
         </div>
       </div>
       <!-- Row 2: Color Selection -->
-       <div class="product-row">
-            <label for="product-color">Select Color:</label>
-            <div id="product-color-options">
-                <!-- Color boxes will be dynamically inserted here -->
-            </div>
+      <div class="product-row">
+        <label for="product-color">Select Color:</label>
+        <div id="product-color-options">
+          <div style="width: 50%; float: left;">
+            <!-- Content for the first half (e.g., color box or text) -->
+          </div>
+          <div style="width: 50%; float: left;">
+            <!-- Content for the second half (e.g., color box or text) -->
+          </div>
         </div>
+      </div>
 
       <!-- Row 3: Size Selection -->
       <div class="product-row">
         <label for="product-size">Select Size:</label>
-        <select id="product-size"> </select>
+        <select id="product-size"></select>
       </div>
 
       <!-- Add to Cart Button -->
@@ -131,148 +155,148 @@
 </script>
 
 <style>
-  .product-grid {
-  width: 100%;
-  margin: 0 auto;
-}
+    .product-grid {
+    width: 100%;
+    margin: 0 auto;
+  }
 
-.product-grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
-  gap: 20px; /* Adds space between the blocks */
-  margin-top: 20px;
-}
+  .product-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 20px; /* Adds space between the blocks */
+    margin-top: 20px;
+  }
 
-.product-block {
-  position: relative;
-}
+  .product-block {
+    position: relative;
+  }
 
-.product-image {
-  width: 100%;
-  height: 250px; /* Adjust this as per your requirement */
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
+  .product-image {
+    width: 100%;
+    height: 250px; /* Adjust this as per your requirement */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
 
-  .open-popup-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
+    .open-popup-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
 
- /* Modal Styling */
-.popup-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  z-index: 9999;
-  display: flex; /* Flexbox to center content */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
+   /* Modal Styling */
+  .popup-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 9999;
+    display: flex; /* Flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
 
-/* Modal Content Styling */
-.popup-content {
-  position: relative;
-  background-color: #fff;
-  padding: 20px;
-  max-width: 800px; /* Maximum width of the modal */
-  width: 100%; /* Make modal content responsive */
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto; /* Allow scroll if content overflows */
-}
+  /* Modal Content Styling */
+  .popup-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 800px; /* Maximum width of the modal */
+    width: 100%; /* Make modal content responsive */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow scroll if content overflows */
+  }
 
-/* Close Button Styling */
-.close-popup-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
-  color: #333;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+  /* Close Button Styling */
+  .close-popup-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-/* Product Details Section */
-.popup-product-details {
-  display: flex;
-  flex-direction: column;
-}
+  /* Product Details Section */
+  .popup-product-details {
+    display: flex;
+    flex-direction: column;
+  }
 
-/* Row Layout */
-.product-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
+  /* Row Layout */
+  .product-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 
-.product-image-container {
-  width: 40%; /* Adjust to fit image */
-}
+  .product-image-container {
+    width: 40%; /* Adjust to fit image */
+  }
 
-.product-image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px; /* Optional: rounding corners of the image */
-}
+  .product-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: rounding corners of the image */
+  }
 
-.product-info-container {
-  width: 55%; /* Adjust to fit the text */
-}
+  .product-info-container {
+    width: 55%; /* Adjust to fit the text */
+  }
 
-.product-info-container h2 {
-  margin: 0;
-  font-size: 24px;
-}
+  .product-info-container h2 {
+    margin: 0;
+    font-size: 24px;
+  }
 
-.product-info-container p {
-  font-size: 18px;
-  color: #333;
-}
+  .product-info-container p {
+    font-size: 18px;
+    color: #333;
+  }
 
-/* Color & Size Options */
- /* Styling for color boxes */
- 
+  /* Color & Size Options */
+   /* Styling for color boxes */
 
-      
-        /* Styling for the product size dropdown */
-         #product-size {
-            padding: 5px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-/* Add to Cart Button */
-#add-to-cart-btn {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-  border-radius: 5px;
-}
 
-#add-to-cart-btn:hover {
-  background-color: #555;
-}
-  </style>
+
+          /* Styling for the product size dropdown */
+           #product-size {
+              padding: 5px;
+              font-size: 16px;
+              border-radius: 5px;
+              border: 1px solid #ccc;
+          }
+  /* Add to Cart Button */
+  #add-to-cart-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+
+  #add-to-cart-btn:hover {
+    background-color: #555;
+  }
+</style>
 {% schema %}
  {
   "name": "Product Liquid",
