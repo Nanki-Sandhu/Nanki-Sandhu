@@ -10,7 +10,7 @@
     {% if product_1 %}
       <div class="product-block">
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219');">
-          <button class="open-popup-btn" data-product-id="{{ product_1.id }}">+</button>
+          <button class="open-popup-btn" data-product-id="{{ product_1.id }}" onclick= "openPopup('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219', 'Bag', 'This is a detailed description of the product.', 29.99)">+</button>
         </div>
       </div>
       <!-- Hidden Product Details -->
@@ -78,7 +78,7 @@
       <!-- Row 1: Image and Product Info -->
       <div class="product-row">
         <div class="product-image-container">
-          <img id="popup-product-image" src="" alt="Product Image" />
+          <img id="popup-Product-Image" src="" alt="Product Image" width="20px" height="20px">
         </div>
         <div class="product-info-container">
           <h2 id="popup-product-name"></h2>
@@ -109,53 +109,18 @@
   </div>
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const popupModal = document.getElementById("product-popup");
-  const closeBtn = document.querySelector(".close-popup-btn");
-  const openPopupBtns = document.querySelectorAll(".open-popup-btn");
+   function openPopup(imageUrl, name, description, price) {
+            document.getElementById('popup-Product-Image').src = imageUrl;
+            document.getElementById('popup-product-name').textContent = name;
+            document.getElementById('popup-product-description').textContent = description;
+            document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
+            document.getElementById('product-popup').style.display = 'block';
+        }
 
-  // Event listener for the button click to open the modal
-  openPopupBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      // This will log the correct productId
-      const productId = e.target.dataset.productId;
-      console.log(productId);  // It should log 'product_1' for Product 1
-
-      // Get the hidden div associated with the productId
-      const productDetailsDiv = document.getElementById(`${productId}_details`);
-
-      // Extract product details from the hidden div
-      const productName = productDetailsDiv.querySelector("h2").textContent; // Title
-      const productDescription = productDetailsDiv.querySelector("p:first-child").textContent; // Description
-      const productPrice = productDetailsDiv.querySelector("p:last-child").textContent; // Price
-
-      // Set the modal content with extracted details
-      document.getElementById("popup-product-name").textContent = productName;
-      document.getElementById("popup-product-description").textContent = productDescription;
-      document.getElementById("popup-product-price").textContent = productPrice;
-
-      // If you have a product image URL, set the image URL here as well
-      const productImageUrl = '{{ product_1.featured_image | img_url: "large" }}'; // Use the actual image URL
-      document.getElementById("popup-product-image").src = productImageUrl;
-
-      // Show the popup modal
-      popupModal.style.display = "flex";
-    });
-  });
-
-  // Close the popup when the close button is clicked
-  closeBtn.addEventListener("click", () => {
-    popupModal.style.display = "none";
-  });
-
-  // Close the popup when clicked outside of the popup content
-  window.addEventListener("click", (e) => {
-    if (e.target === popupModal) {
-      popupModal.style.display = "none";
-    }
-  });
-});
-
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('product-popup').style.display = 'none';
+        }
 </script>
 
 <style>
