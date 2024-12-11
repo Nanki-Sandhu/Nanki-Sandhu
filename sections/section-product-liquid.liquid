@@ -10,7 +10,7 @@
     {% if product_1 %}
       <div class="product-block">
         <div class="product-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219');">
-          <button class="open-popup-btn" data-product-id="{{ product_1.id }}" onclick= "openPopup('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219', 'Bag', 'This is a detailed description of the product.', 29.99)">+</button>
+          <button class="open-popup-btn" data-product-id="{{ product_1.id }}" onclick= "openPopup('https://cdn.shopify.com/s/files/1/0728/7252/6061/files/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg?v=1733769219', 'Bag', 'This is a detailed description of the product.', 29.99,'Red','Black')">+</button>
         </div>
       </div>
       <!-- Hidden Product Details -->
@@ -72,7 +72,6 @@
 <div id="product-popup" class="popup-modal" style="display: none;">
   <div class="popup-content">
     <span class="close-popup-btn" onclick="closePopup()">&times;</span>
-
     <!-- Product Details -->
     <div class="popup-product-details">
       <!-- Row 1: Image and Product Info -->
@@ -86,21 +85,18 @@
           <p id="popup-product-price"></p>
         </div>
       </div>
-
       <!-- Row 2: Color Selection -->
-      <div class="product-row">
-        <label for="product-color">Select Color:</label>
-        <div id="product-color-options">
-          <!-- Color options will be dynamically inserted here -->
+       <div class="product-row">
+            <label for="product-color">Select Color:</label>
+            <div id="product-color-options">
+                <!-- Color boxes will be dynamically inserted here -->
+            </div>
         </div>
-      </div>
 
       <!-- Row 3: Size Selection -->
       <div class="product-row">
         <label for="product-size">Select Size:</label>
-        <select id="product-size">
-          <!-- Size options will be dynamically inserted here -->
-        </select>
+        <select id="product-size"> </select>
       </div>
 
       <!-- Add to Cart Button -->
@@ -109,14 +105,33 @@
   </div>
 </div>
 <script>
-   function openPopup(imageUrl, name, description, price) {
+   function openPopup(imageUrl, name, description, price,color1,color2) {
             document.getElementById('popup-Product-Image').src = imageUrl;
             document.getElementById('popup-product-name').textContent = name;
             document.getElementById('popup-product-description').textContent = description;
             document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
             document.getElementById('product-popup').style.display = 'block';
         }
-
+             // Dynamically insert color boxes with names inside
+            const colorOptionsContainer = document.getElementById('product-color-options');
+            colorOptionsContainer.innerHTML = `
+                <div class="color-box" style="background-color: ${color1};" onclick="selectColor('${color1}')">
+                    ${color1}
+                </div>
+                <div class="color-box" style="background-color: ${color2};" onclick="selectColor('${color2}')">
+                    ${color2}
+                </div>
+            `;
+           const sizeSelect = document.getElementById('product-size');
+            sizeSelect.innerHTML = `
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+                <option value="2xl">2XL</option>
+                <option value="6xl">6XL</option>
+            `;
         // Function to close the popup
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
@@ -239,24 +254,33 @@
 }
 
 /* Color & Size Options */
-#product-color-options {
-  display: flex;
-  gap: 10px;
-}
+ /* Styling for color boxes */
+        #product-color-options {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+        }
 
-#product-color-options input {
-  width: 30px;
-  height: 30px;
-  border: none;
-  cursor: pointer;
-}
+        .color-box {
+            width: 45%;
+            height: 60px;
+            border: 2px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-#product-size {
-  width: 200px;
-  padding: 5px;
-  font-size: 16px;
-}
-
+        /* Styling for the product size dropdown */
+        #product-size {
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
 /* Add to Cart Button */
 #add-to-cart-btn {
   padding: 10px 20px;
