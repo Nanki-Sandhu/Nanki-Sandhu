@@ -134,13 +134,10 @@
         }
            const color1Element = document.getElementById('productcolor1');
     const color2Element = document.getElementById('productcolor2');
-    
-   console.log(color1Element);  // Check if it's properly selected
-    console.log(color2Element);  // Check if it's properly selected
 
     if (color1Element && color2Element) {
         color1Element.innerHTML = `<h3>Red</h3>`;
-        color2Element.innerHTML = `<h3>${color2}</h3>`;
+        color2Element.innerHTML = `<h3>${color2}+" "</h3>`;
     } else {
         console.error('Elements not found!');
     }
