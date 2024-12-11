@@ -143,7 +143,7 @@
       </div>
 
       <!-- Add to Cart Button -->
-      <button id="add-to-cart-btn">Add to Cart</button>
+      <button id="add-to-cart-btn" onclick="addButton()">Add to Cart</button>
     </div>
   </div>
 </div>
@@ -211,7 +211,9 @@ function selectColor(event, color) {
     selectedColor = color;
     console.log("Selected color: " + selectedColor);
 }
-
+function addButton() {
+  console.log("Add to cart clicked");
+}
 // Function to add the selected item to the cart
 function addToCart(color, size) {
     console.log(`Color: ${color}, Size: ${size} added to the cart!`);
