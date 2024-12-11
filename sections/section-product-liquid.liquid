@@ -112,26 +112,9 @@
             document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
             document.getElementById('product-popup').style.display = 'block';
         }
-             // Dynamically insert color boxes with names inside
-            const colorOptionsContainer = document.getElementById('product-color-options');
-            colorOptionsContainer.innerHTML = `
-                <div class="color-box" style="background-color: ${color1};" onclick="selectColor('${color1}')">
-                    RED
-                </div>
-                <div class="color-box" style="background-color: ${color2};" onclick="selectColor('${color2}')">
-                    Black
-                </div>
-            `;
            const sizeSelect = document.getElementById('product-size');
             sizeSelect.innerHTML = `
-                <option value="xs">XS</option>
-                <option value="s">S</option>
-                <option value="m">M</option>
-                <option value="l">L</option>
-                <option value="xl">XL</option>
-                <option value="2xl">2XL</option>
-                <option value="6xl">6XL</option>
-            `;
+                <option value="xs">XS</option>`;
         // Function to close the popup
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
