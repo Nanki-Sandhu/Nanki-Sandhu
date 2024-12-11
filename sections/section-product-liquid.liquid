@@ -196,26 +196,17 @@ color2Element.addEventListener('click', function(event) {
     // Optionally, handle the add-to-cart action here
    selectedColor = color;
 }
-
+ function consoleColor() {
+   console.log(`${selectedColor}`);
+ }
+  consoleColor();
 const addToCartButton = document.getElementById('add-to-cart-button');
  addToCartButton.addEventListener('click', function() {
    console.log("add to cart clicked");
-   console.log(`${selectedColor}`);
-   console.log(selectedColor)
-    if (!selectedColor || !selectedSize) {
-        alert("Please select both a color and a size before adding to the cart.");
-        return;
-    }
-
-    // Proceed to add to cart
-    addToCart(selectedColor, selectedSize);
+  
 });
 
-// Example add-to-cart function
-function addToCart(color, size) {
-    console.log(`Color: ${color}, Size: ${size} added to the cart!`);
-    // Implement actual cart functionality here
-}
+
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
         }
