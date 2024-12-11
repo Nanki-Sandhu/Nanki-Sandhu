@@ -213,6 +213,13 @@ function selectColor(event, color) {
 }
 function addButton() {
   console.log("Add to cart clicked");
+  if (!selectedColor || !selectedSize) {
+        alert("Please select both a color and a size.");
+        return;
+    }
+
+    // Call the function to handle adding the item to the cart
+    console.log(`Color: ${selectedColor}, Size: ${selectedSize} added to the cart!`);
 }
 // Function to add the selected item to the cart
 function addToCart(color, size) {
