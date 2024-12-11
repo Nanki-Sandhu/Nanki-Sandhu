@@ -153,10 +153,10 @@ let selectedColor = null;
 let selectedSize = null;
 let productName = null;
 let productPrice = null;
+// Initialize an empty cart array
+let cart = [];
 
-function openPopup(imageUrl, name, description, price, color1, color2) {
-    console.log(typeof color1, typeof color2);
-    
+function openPopup(imageUrl, name, description, price, color1, color2) {  
     // Set the popup content
     document.getElementById('popup-Product-Image').src = imageUrl;
     document.getElementById('popup-product-name').textContent = name;
@@ -176,16 +176,14 @@ function openPopup(imageUrl, name, description, price, color1, color2) {
     
     // Event listeners to select colors
     color1Element.addEventListener('click', function(event) {
-        console.log("color1 clicked");
         selectColor(event, color1);
     });
 
     color2Element.addEventListener('click', function(event) {
-        console.log("color2 clicked");
         selectColor(event, color2);
     });
     
-    // Set up the size select options dynamically
+    // Set up the size select
     const sizeSelect = document.getElementById('product-size');
     sizeSelect.innerHTML = `
         <option value="xs">XS</option>
@@ -198,8 +196,7 @@ function openPopup(imageUrl, name, description, price, color1, color2) {
     
     // Update selectedSize whenever the user selects a size
     sizeSelect.addEventListener('change', function() {
-        selectedSize = sizeSelect.value;  // Update selected size dynamically
-        console.log("Selected size: " + selectedSize);
+        selectedSize = sizeSelect.value;  
     });
     
 }
@@ -208,11 +205,7 @@ function openPopup(imageUrl, name, description, price, color1, color2) {
 function selectColor(event, color) {
     const allColorDivs = document.querySelectorAll('.color-option');
     allColorDivs.forEach(div => div.classList.remove('selected'));
-
-    // Add 'selected' class to the clicked color div
     event.target.classList.add('selected');
-
-    // Update the selectedColor variable
     selectedColor = color;
     console.log("Selected color: " + selectedColor);
 }
@@ -222,24 +215,21 @@ function addButton() {
         alert("Please select both a color and a size.");
         return;
     }
-
-    // Call the function to handle adding the item to the cart
     console.log(`Color: ${selectedColor}, Size: ${selectedSize} added to the cart!`);
-   // Call the function to handle adding the item to the cart
+ 
     addToCart(selectedColor, selectedSize, productName, productPrice);
 }
 // Function to add the selected item to the cart
-// Function to add the selected item to the cart
 function addToCart(color, size, name, price) {
     console.log(`Product: ${name}, Color: ${color}, Size: ${size}, Price: $${price} added to the cart!`);
-    
-    // Example of adding the product to the cart (you can replace this with actual cart logic)
     const cartItem = {
         name: name,
         color: color,
         size: size,
         price: price
     };
+  // Add the product to the cart array
+    cart.push(cartItem);
    // Check if the added product is "Black" and "Medium"
     if (color === 'Black' && size === 'm') {
         // Add the "Soft Winter Jacket" to the cart if the condition is met
@@ -247,12 +237,14 @@ function addToCart(color, size, name, price) {
             name: 'Soft Winter Jacket',
             color: 'Black',
             size: 'm',
-            price: 99.99  // Set the price of the "Soft Winter Jacket"
+            price: 99.99 
         };
-        
-        
+      cart.push(softWinterJacket);
         console.log('Soft Winter Jacket added to the cart because of Black and Medium selection.');
 }
+  cart.forEach((item, index) => {
+        console.log(`Item ${index + 1}:`, item);
+    });
 }
 // Close the popup
 function closePopup() {
