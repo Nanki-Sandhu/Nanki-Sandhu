@@ -195,6 +195,20 @@ function openPopup(imageUrl, name, description, price, color1, color2) {
         selectedSize = sizeSelect.value;  // Update selected size dynamically
         console.log("Selected size: " + selectedSize);
     });
+  // Handle Add to Cart button click
+const addToCartButton = document.getElementById('add-to-cart-button');
+addToCartButton.addEventListener('click', function() {
+    console.log("Add to cart clicked");
+
+    // Check if both color and size are selected
+    if (!selectedColor || !selectedSize) {
+        alert("Please select both a color and a size.");
+        return;
+    }
+
+    // Proceed to add to cart
+    addToCart(selectedColor, selectedSize);
+});
 }
 
 // Handle color selection
@@ -210,20 +224,7 @@ function selectColor(event, color) {
     console.log("Selected color: " + selectedColor);
 }
 
-// Handle Add to Cart button click
-const addToCartButton = document.getElementById('add-to-cart-button');
-addToCartButton.addEventListener('click', function() {
-    console.log("Add to cart clicked");
 
-    // Check if both color and size are selected
-    if (!selectedColor || !selectedSize) {
-        alert("Please select both a color and a size.");
-        return;
-    }
-
-    // Proceed to add to cart
-    addToCart(selectedColor, selectedSize);
-});
 
 // Function to add the selected item to the cart
 function addToCart(color, size) {
