@@ -162,13 +162,13 @@
         color1Element.innerHTML = `${color1}`;
         color2Element.innerHTML = `${color2}`;
   // Event listeners to select colors
-color1Element.addEventListener('click', function() {
+color1Element.addEventListener('click', function(event) {
     console.log("color1 clicked");
-  selectColor(color1);
+  selectColor(event,color1);
 });
 
-color2Element.addEventListener('click', function() {
-    console.log("color1 clicked");
+color2Element.addEventListener('click', function(event) {
+   selectColor(event,color1);
 });
            const sizeSelect = document.getElementById('product-size');
             sizeSelect.innerHTML = `
@@ -181,14 +181,12 @@ color2Element.addEventListener('click', function() {
                 <option value="6xl">6XL</option>`;
         // Function to close the popup
    }
-  function selectColor(color) {
-    // Clear any previous selections
-    console.log(color);
-    const allColorDivs = document.querySelectorAll('.color-option');
+  function selectColor(event,color) {
+   const allColorDivs = document.querySelectorAll('.color-option');
     allColorDivs.forEach(div => div.classList.remove('selected'));
 
-    // Add 'selected' class to the clicked color div
-    color.classList.add('selected');
+    // Add 'selected' class to the clicked color div (use event.target instead of this)
+    event.target.classList.add('selected');
 
     // Optionally, handle the add-to-cart action here
     addToCart(color);
