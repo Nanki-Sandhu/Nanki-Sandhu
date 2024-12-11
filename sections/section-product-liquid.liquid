@@ -158,7 +158,6 @@
         
            const color1Element = document.getElementById('productcolor1');
     const color2Element = document.getElementById('productcolor2');
-
           
         color1Element.innerHTML = `${color1}`;
         color2Element.innerHTML = `${color2}`;
@@ -174,6 +173,30 @@
                 <option value="6xl">6XL</option>`;
         // Function to close the popup
    }
+  function selectColor(color) {
+    // Clear any previous selections
+    const allColorDivs = document.querySelectorAll('.color-option');
+    allColorDivs.forEach(div => div.classList.remove('selected'));
+
+    // Add 'selected' class to the clicked color div
+    this.classList.add('selected');
+
+    // Optionally, handle the add-to-cart action here
+    addToCart(color);
+}
+
+// Event listeners to select colors
+color1Element.addEventListener('click', function() {
+    selectColor.call(this, color1);
+});
+
+color2Element.addEventListener('click', function() {
+    selectColor.call(this, color2);
+});
+  function addToCart(color) {
+    console.log(`Color ${color} added to the cart!`);
+    // Implement actual cart functionality here
+}
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
         }
