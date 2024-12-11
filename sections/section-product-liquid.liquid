@@ -197,8 +197,8 @@ color2Element.addEventListener('click', function(event) {
    selectedColor = color;
 }
 
-
- add-to-cart-btn.addEventListener('click', function() {
+const addToCartButton = document.getElementById('add-to-cart-button');
+ addToCartButton.addEventListener('click', function() {
    console.log("add to cart clicked");
    console.log(`${selectedColor}`);
    console.log(selectedColor)
