@@ -183,11 +183,12 @@ color2Element.addEventListener('click', function() {
    }
   function selectColor(color) {
     // Clear any previous selections
+    console.log(color);
     const allColorDivs = document.querySelectorAll('.color-option');
     allColorDivs.forEach(div => div.classList.remove('selected'));
 
     // Add 'selected' class to the clicked color div
-    this.classList.add('selected');
+    color.classList.add('selected');
 
     // Optionally, handle the add-to-cart action here
     addToCart(color);
