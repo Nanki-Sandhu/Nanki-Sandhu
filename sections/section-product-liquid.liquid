@@ -107,8 +107,8 @@
       <!-- Row 2: Color Selection -->
       <div class="product-row">
         <div id="product-color-options">
-          <div id="color1"><p>Hello</p></div>
-          <div id="color2"><p>HELLO</p></div>
+          <div id="color1"></div>
+          <div id="color2"></div>
         </div>
       </div>
 
@@ -131,8 +131,8 @@
             document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
             document.getElementById('product-popup').style.display = 'block';
         }
-           const color1Element = document.getElementById('color1').getElementsByTagName('p')[0];
-    const color2Element = document.getElementById('color2').getElementsByTagName('p')[0];
+           const color1Element = document.getElementById('color1');
+    const color2Element = document.getElementById('color2');
     
     // Set the color names dynamically
     color1Element.textContent = color1;
@@ -298,9 +298,7 @@
       border-right: 2px solid #ccc; /* Add a border between the two halves */
   }
 
-  #color1 p, #color2 p {
-      margin: 0;                    /* Remove default margin on <p> tags */
-  }
+
 
               /* Styling for the product size dropdown */
                #product-size {
