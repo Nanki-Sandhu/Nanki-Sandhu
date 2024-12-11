@@ -151,6 +151,8 @@
   // Variables to store the selected color and size
 let selectedColor = null;
 let selectedSize = null;
+let productName = null;
+let productPrice = null;
 
 function openPopup(imageUrl, name, description, price, color1, color2) {
     console.log(typeof color1, typeof color2);
@@ -161,8 +163,11 @@ function openPopup(imageUrl, name, description, price, color1, color2) {
     document.getElementById('popup-product-description').textContent = description;
     document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
     document.getElementById('product-popup').style.display = 'block';
-    //const addToCartButton = document.getElementById('add-to-cart-button');
-    
+   
+    // Store the product name and price
+    productName = name;
+    productPrice = price;
+  
     // Set colors for the color options divs
     const color1Element = document.getElementById('productcolor1');
     const color2Element = document.getElementById('productcolor2');
@@ -220,77 +225,26 @@ function addButton() {
 
     // Call the function to handle adding the item to the cart
     console.log(`Color: ${selectedColor}, Size: ${selectedSize} added to the cart!`);
+   // Call the function to handle adding the item to the cart
+    addToCart(selectedColor, selectedSize, productName, productPrice);
 }
 // Function to add the selected item to the cart
-function addToCart(color, size) {
-    console.log(`Color: ${color}, Size: ${size} added to the cart!`);
-    // Implement actual cart functionality here (e.g., updating the cart)
+// Function to add the selected item to the cart
+function addToCart(color, size, name, price) {
+    console.log(`Product: ${name}, Color: ${color}, Size: ${size}, Price: $${price} added to the cart!`);
+    
+    // Example of adding the product to the cart (you can replace this with actual cart logic)
+    const cartItem = {
+        name: name,
+        color: color,
+        size: size,
+        price: price
+    };
 }
-
 // Close the popup
 function closePopup() {
     document.getElementById('product-popup').style.display = 'none';
 }
-  /*
-  // Variables to store the selected color and size
-let selectedColor = null;
-let selectedSize = null;
-   function openPopup(imageUrl, name, description, price,color1,color2) {
-           console.log(typeof color1, typeof color2);
-            document.getElementById('popup-Product-Image').src = imageUrl;
-            document.getElementById('popup-product-name').textContent = name;
-            document.getElementById('popup-product-description').textContent = description;
-            document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
-            document.getElementById('product-popup').style.display = 'block';
-          
-           const color1Element = document.getElementById('productcolor1');
-    const color2Element = document.getElementById('productcolor2');
-          
-        color1Element.innerHTML = `${color1}`;
-        color2Element.innerHTML = `${color2}`;
-     
-  // Event listeners to select colors
-color1Element.addEventListener('click', function(event) {
-    console.log("color1 clicked");
-  selectColor(event,color1);
-});
-
-color2Element.addEventListener('click', function(event) {
-   selectColor(event,color2);
-});
-           const sizeSelect = document.getElementById('product-size');
-            sizeSelect.innerHTML = `
-                <option value="xs">XS</option>
-                <option value="xs">S</option>
-                <option value="m">M</option>
-                <option value="l">L</option>
-                <option value="xl">XL</option>
-                <option value="2xl">2XL</option>
-                <option value="6xl">6XL</option>`;
-              selectedSize = sizeSelect.value;
-   }
-   
-  function selectColor(event,color) {
-   const allColorDivs = document.querySelectorAll('.color-option');
-    allColorDivs.forEach(div => div.classList.remove('selected'));
-
-    // Add 'selected' class to the clicked color div (use event.target instead of this)
-    event.target.classList.add('selected');
-
-    // Optionally, handle the add-to-cart action here
-   selectedColor = color;
-}
- 
-const addToCartButton = document.getElementById('add-to-cart-button');
- addToCartButton.addEventListener('click', function() {
-   console.log("add to cart clicked");
-  
-});
-
-
-        function closePopup() {
-            document.getElementById('product-popup').style.display = 'none';
-        }*/
 </script>
 
 <style>
