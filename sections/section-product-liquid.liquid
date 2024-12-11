@@ -131,7 +131,12 @@
             document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
             document.getElementById('product-popup').style.display = 'block';
         }
-          const colorOptionsContainer = document.getElementById('product-color-options');
+           const color1Element = document.getElementById('color1').getElementsByTagName('p')[0];
+    const color2Element = document.getElementById('color2').getElementsByTagName('p')[0];
+    
+    // Set the color names dynamically
+    color1Element.textContent = color1;
+    color2Element.textContent = color2;
            
   
            const sizeSelect = document.getElementById('product-size');
