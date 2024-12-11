@@ -161,6 +161,7 @@
           
         color1Element.innerHTML = `${color1}`;
         color2Element.innerHTML = `${color2}`;
+     
   // Event listeners to select colors
 color1Element.addEventListener('click', function(event) {
     console.log("color1 clicked");
@@ -179,8 +180,10 @@ color2Element.addEventListener('click', function(event) {
                 <option value="xl">XL</option>
                 <option value="2xl">2XL</option>
                 <option value="6xl">6XL</option>`;
-        // Function to close the popup
+              sizeSelect.addEventListener('change', addSizeToCart);
+        
    }
+  
   function selectColor(event,color) {
    const allColorDivs = document.querySelectorAll('.color-option');
     allColorDivs.forEach(div => div.classList.remove('selected'));
@@ -195,7 +198,14 @@ color2Element.addEventListener('click', function(event) {
 
   function addToCart(color) {
     console.log(`Color ${color} added to the cart!`);
-    // Implement actual cart functionality here
+    
+}
+  function addSizeToCart() {
+    const selectedSize = sizeSelect.value; // Get the selected size
+    console.log(`Size ${selectedSize} added to the cart!`);
+    
+    // Implement your actual cart functionality here
+    // For example, you might call a function to update the cart with the selected size.
 }
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
