@@ -151,6 +151,94 @@
   // Variables to store the selected color and size
 let selectedColor = null;
 let selectedSize = null;
+
+function openPopup(imageUrl, name, description, price, color1, color2) {
+    console.log(typeof color1, typeof color2);
+    
+    // Set the popup content
+    document.getElementById('popup-Product-Image').src = imageUrl;
+    document.getElementById('popup-product-name').textContent = name;
+    document.getElementById('popup-product-description').textContent = description;
+    document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
+    document.getElementById('product-popup').style.display = 'block';
+    
+    // Set colors for the color options divs
+    const color1Element = document.getElementById('productcolor1');
+    const color2Element = document.getElementById('productcolor2');
+    color1Element.innerHTML = `${color1}`;
+    color2Element.innerHTML = `${color2}`;
+    
+    // Event listeners to select colors
+    color1Element.addEventListener('click', function(event) {
+        console.log("color1 clicked");
+        selectColor(event, color1);
+    });
+
+    color2Element.addEventListener('click', function(event) {
+        console.log("color2 clicked");
+        selectColor(event, color2);
+    });
+    
+    // Set up the size select options dynamically
+    const sizeSelect = document.getElementById('product-size');
+    sizeSelect.innerHTML = `
+        <option value="xs">XS</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+        <option value="2xl">2XL</option>
+        <option value="6xl">6XL</option>`;
+    
+    // Update selectedSize whenever the user selects a size
+    sizeSelect.addEventListener('change', function() {
+        selectedSize = sizeSelect.value;  // Update selected size dynamically
+        console.log("Selected size: " + selectedSize);
+    });
+}
+
+// Handle color selection
+function selectColor(event, color) {
+    const allColorDivs = document.querySelectorAll('.color-option');
+    allColorDivs.forEach(div => div.classList.remove('selected'));
+
+    // Add 'selected' class to the clicked color div
+    event.target.classList.add('selected');
+
+    // Update the selectedColor variable
+    selectedColor = color;
+    console.log("Selected color: " + selectedColor);
+}
+
+// Handle Add to Cart button click
+const addToCartButton = document.getElementById('add-to-cart-button');
+addToCartButton.addEventListener('click', function() {
+    console.log("Add to cart clicked");
+
+    // Check if both color and size are selected
+    if (!selectedColor || !selectedSize) {
+        alert("Please select both a color and a size.");
+        return;
+    }
+
+    // Proceed to add to cart
+    addToCart(selectedColor, selectedSize);
+});
+
+// Function to add the selected item to the cart
+function addToCart(color, size) {
+    console.log(`Color: ${color}, Size: ${size} added to the cart!`);
+    // Implement actual cart functionality here (e.g., updating the cart)
+}
+
+// Close the popup
+function closePopup() {
+    document.getElementById('product-popup').style.display = 'none';
+}
+  /*
+  // Variables to store the selected color and size
+let selectedColor = null;
+let selectedSize = null;
    function openPopup(imageUrl, name, description, price,color1,color2) {
            console.log(typeof color1, typeof color2);
             document.getElementById('popup-Product-Image').src = imageUrl;
@@ -196,10 +284,7 @@ color2Element.addEventListener('click', function(event) {
     // Optionally, handle the add-to-cart action here
    selectedColor = color;
 }
- function consoleColor() {
-   console.log(`${selectedColor}`);
- }
-  consoleColor();
+ 
 const addToCartButton = document.getElementById('add-to-cart-button');
  addToCartButton.addEventListener('click', function() {
    console.log("add to cart clicked");
@@ -209,7 +294,7 @@ const addToCartButton = document.getElementById('add-to-cart-button');
 
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
-        }
+        }*/
 </script>
 
 <style>
