@@ -148,6 +148,9 @@
   </div>
 </div>
 <script>
+  // Variables to store the selected color and size
+let selectedColor = null;
+let selectedSize = null;
    function openPopup(imageUrl, name, description, price,color1,color2) {
            console.log(typeof color1, typeof color2);
             document.getElementById('popup-Product-Image').src = imageUrl;
@@ -155,7 +158,7 @@
             document.getElementById('popup-product-description').textContent = description;
             document.getElementById('popup-product-price').textContent = '$' + price.toFixed(2);
             document.getElementById('product-popup').style.display = 'block';
-        
+          
            const color1Element = document.getElementById('productcolor1');
     const color2Element = document.getElementById('productcolor2');
           
@@ -180,12 +183,11 @@ color2Element.addEventListener('click', function(event) {
                 <option value="xl">XL</option>
                 <option value="2xl">2XL</option>
                 <option value="6xl">6XL</option>`;
-              
-      const selectedSize = sizeSelect.value; // Get the selected size
-     sizeSelect.addEventListener('change', addSizeToCart(selectedSize));
+              selectedSize = sizeSelect.value;
+     
         
    }
-  
+   
   function selectColor(event,color) {
    const allColorDivs = document.querySelectorAll('.color-option');
     allColorDivs.forEach(div => div.classList.remove('selected'));
@@ -194,7 +196,7 @@ color2Element.addEventListener('click', function(event) {
     event.target.classList.add('selected');
 
     // Optionally, handle the add-to-cart action here
-    addToCart(color);
+   selectedColor = color;
 }
 
 
@@ -202,13 +204,7 @@ color2Element.addEventListener('click', function(event) {
     console.log(`Color ${color} added to the cart!`);
     
 }
-  function addSizeToCart(selectedSize) {
-   
-    console.log(`Size ${selectedSize} added to the cart!`);
-    
-    // Implement your actual cart functionality here
-    // For example, you might call a function to update the cart with the selected size.
-}
+ 
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
         }
