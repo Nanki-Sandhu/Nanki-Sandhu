@@ -180,7 +180,9 @@ color2Element.addEventListener('click', function(event) {
                 <option value="xl">XL</option>
                 <option value="2xl">2XL</option>
                 <option value="6xl">6XL</option>`;
-              sizeSelect.addEventListener('change', addSizeToCart);
+              
+      const selectedSize = sizeSelect.value; // Get the selected size
+     sizeSelect.addEventListener('change', addSizeToCart(selectedSize));
         
    }
   
@@ -200,8 +202,8 @@ color2Element.addEventListener('click', function(event) {
     console.log(`Color ${color} added to the cart!`);
     
 }
-  function addSizeToCart() {
-    const selectedSize = sizeSelect.value; // Get the selected size
+  function addSizeToCart(selectedSize) {
+   
     console.log(`Size ${selectedSize} added to the cart!`);
     
     // Implement your actual cart functionality here
