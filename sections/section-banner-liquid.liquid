@@ -25,134 +25,102 @@
   </div>
 
   <style>
-                        .banner-flex-section {
-                          width: 100%;
-                          background-color: #f0f0f0;
-                        }
+        .banner-flex-section {
+          width: 100%;
+          background-color: #f0f0f0;
+        }
 
-                        .banner-flex-content {
-                          padding: 40px 20px;
-                        }
+        .banner-flex-content {
+          padding: 40px 20px;
+        }
 
-                        .banner-flex-items {
-                          display: flex;
-                          justify-content: space-between;
-                          align-items: center;
-                          gap: 20px;
-                          margin-bottom: 30px;
-                        }
+        .banner-flex-items {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+          margin-bottom: 30px;
+        }
 
-                        .banner-heading {
-                          font-size: 2.5rem;
-                          font-weight: bold;
-                          color: #333;
-                          flex: 1;
-                        }
+        .banner-heading {
+          font-size: 2.5rem;
+          font-weight: bold;
+          color: #333;
+          flex: 1;
+        }
 
-                        .banner-text {
-                          font-size: 1.25rem;
-                          color: black;
-                          flex: 2;
-                        }
+        .banner-text {
+          font-size: 1.25rem;
+          color: black;
+          flex: 2;
+        }
 
-                        .banner-button {
-                          background-color: yellow;
-                          color: black;
-                          padding: 12px 25px;
-                          font-size: 1rem;
-                          text-decoration: none;
-                          border-radius: 5px;
-                          transition: background-color 0.3s ease;
-                        }
+        .banner-button {
+          background-color: yellow;
+          color: black;
+          padding: 12px 25px;
+          font-size: 1rem;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+        }
 
-                        .banner-button:hover {
-                          background-color: #0056b3;
-                        }
+        .banner-button:hover {
+          background-color: #0056b3;
+        }
 
-                       .banner-image {
-                      margin-top: 20px;
-                      width: 100%;
-                      height: 400px;
-                      background-size: cover;
-                      background-position: center;
-                      display: block;
-                         padding:0;
-                          position: relative;
-                    }
+       .banner-image {
+      margin-top: 20px;
+      width: 100%;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      display: block;
+         padding:0;
+          position: relative;
+    }
 
-                    .banner-content {
-                      position: absolute;
-                      bottom: 0;
-                      margin-left: 20px;
-                      width: 40%;
-                      background-color: white;
-                      color: black;
-                      padding: 20px;
-                      text-align: left;
-                    }
+    .banner-content {
+      position: absolute;
+      bottom: 0;
+      margin-left: 20px;
+      width: 40%;
+      background-color: white;
+      color: black;
+      padding: 20px;
+      text-align: left;
+    }
 
-                    .banner-heading {
-                      font-size: 3rem;
-                      font-weight: bold;
-                      margin-bottom: 10px;
+    .banner-heading {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
 
-                    }
+    }
 
-                    .banner-text {
-                      font-size: 1.30rem;
-                      margin-bottom: 15px;
+    .banner-text {
+      font-size: 1.30rem;
+      margin-bottom: 15px;
 
-                    }
-                /* Basic styles for the button */
-       .banner-button {
-      position: relative;
-      display: inline-block;
+    }
+
+
+    .banner-button {
       background-color: black;
-      color: white; /* Initial text color */
+      color: white;
       padding: 10px 20px;
       font-size: 1.3rem;
       text-decoration: none;
-      overflow: hidden;
-      transition: color 0.3s ease; /* Smooth text color transition */
+      transition: background-color 0.3s ease;
     }
 
-    /* Add an empty pseudo-element that will animate for the yellow background */
-    .banner-button::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%; /* Initially position the yellow background off-screen to the left */
-      right: 0;
-      bottom: 0;
-      background-color: yellow;
-      transition: left 0.4s ease; /* Smooth transition for the background */
-    }
-
-    /* On hover, change text color and animate the yellow background from left to right */
     .banner-button:hover {
-      color: black; /* Change text color to black on hover */
+      background-color: #0056b3;
     }
-
-    .banner-button:hover::after {
-      left: 0; /* Move the yellow background from left to right */
-    }
-                 /*
-                    .banner-button {
-                      background-color: black;
-                      color: white;
-                      padding: 10px 20px;
-                      font-size: 1.3rem;
-                      text-decoration: none;
-                      transition: background-color 0.3s ease;
-                    }
-
-                    .banner-button:hover {
-                      background-color: #0056b3;
-                    }*/
-                        .banner-bottom{
-                          text-align:center;
-                          color: black;
-                        }
+        .banner-bottom{
+          text-align:center;
+          color: black;
+        }
   </style>
 </section>
 
