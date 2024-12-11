@@ -184,8 +184,6 @@ color2Element.addEventListener('click', function(event) {
                 <option value="2xl">2XL</option>
                 <option value="6xl">6XL</option>`;
               selectedSize = sizeSelect.value;
-     
-        
    }
    
   function selectColor(event,color) {
@@ -204,7 +202,21 @@ color2Element.addEventListener('click', function(event) {
     console.log(`Color ${color} added to the cart!`);
     
 }
- 
+ add-to-cart-btn.addEventListener('click', function() {
+    if (!selectedColor || !selectedSize) {
+        alert("Please select both a color and a size before adding to the cart.");
+        return;
+    }
+
+    // Proceed to add to cart
+    addToCart(selectedColor, selectedSize);
+});
+
+// Example add-to-cart function
+function addToCart(color, size) {
+    console.log(`Color: ${color}, Size: ${size} added to the cart!`);
+    // Implement actual cart functionality here
+}
         function closePopup() {
             document.getElementById('product-popup').style.display = 'none';
         }
