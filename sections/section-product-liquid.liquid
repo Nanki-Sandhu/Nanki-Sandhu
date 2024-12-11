@@ -135,12 +135,15 @@
            const color1Element = document.getElementById('productcolor1');
     const color2Element = document.getElementById('productcolor2');
     
-    // Set the color names dynamically
-    color1Element.innerHTML +=
-                `<h3>
-                  ${color1}
-                </h3>`;
-    color2Element.innerHTML = color2;
+   console.log(color1Element);  // Check if it's properly selected
+    console.log(color2Element);  // Check if it's properly selected
+
+    if (color1Element && color2Element) {
+        color1Element.innerHTML = `<h3>${color1}</h3>`;
+        color2Element.innerHTML = `<h3>${color2}</h3>`;
+    } else {
+        console.error('Elements not found!');
+    }
            
   
            const sizeSelect = document.getElementById('product-size');
